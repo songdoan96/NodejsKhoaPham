@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web HTML</title>
+  </head>
+  <body>
+    <h1>Day la webserver voi pipe</h1>
+    <pre>
+var http = require("http"); </br>
+var fs = require("fs");     </br>
+
+http.createServer(function(req,res){      </br>
+	res.writeHead(200,{"Content-Type":"text/html"});    </br>
+	fs.createReadStream(__dirname + "/index.html").pipe(res);   </br>
+}).listen(8000);     </br>
+</pre>
+  </body>
+</html>
